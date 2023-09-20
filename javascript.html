@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Times Table</title>
+</head>
+<body>
+    <h1>Number added</h1>
+    <label>Enter a number: </label>
+    <input id="number" >
+    <hr style="border: none;">
+    <label>Enter another number: </label>
+    <input type="number" id="limit" min="1" max="100">
+    <hr style="border: none;">
+    <button onclick="generateTimesTable()">Add numbers</button>
+    <div id="timesTable"></div>
+    <script>
+        function generateTimesTable() {
+            const numberInput = document.getElementById('number');
+            const limitInput = document.getElementById('limit');
+            const timesTableDiv = document.getElementById('timesTable');
+            const number = parseInt(numberInput.value);
+            const limit = parseInt(limitInput.value);
+            if (!isNaN(number) && !isNaN(limit)) {
+                let tableHTML = '<h2>Times Table</h2><br>';
+                for (let i = 1; i <= limit; i++) {
+                    tableHTML +=  number + ' + ' + i + ' = ' + (number + i) + '<br>';
+                }
+                tableHTML += '<br>';
+                timesTableDiv.innerHTML = tableHTML;
+            } else {
+                timesTableDiv.innerHTML = '<p>Please enter valid numbers.</p>';
+            } 
+        }
+    </script>
+</body>
+</html>
