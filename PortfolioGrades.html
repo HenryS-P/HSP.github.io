@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Portfolio grade challenge</title>
+</head>
+<body>
+    <h1>Portfolio grade challenge</h1>
+    <label>What was your evaluation score (1-25)? </label>
+    <input id="eval" max="25" min="0" type="number">
+    <label>What was your implementation score (1-25)? </label>
+    <input id="imp" max="25" min="0" type="number">
+    <label>What was your design score (1-25)? </label>
+    <input id="design" max="25" min="0" type="number">
+    <label>What was your analysis score (1-25)? </label>
+    <input id="analysis" max="25" min="0" type="number">
+    <button onclick="grades()">CLICK FOR GRADE</button>
+    <div id="scoreDiv"></div>
+    <script>
+        function grades(){
+        const evalInput = document.getElementById('eval');
+        const impInput = document.getElementById('imp');
+        const designInput = document.getElementById('design');
+        const analysisInput = document.getElementById('analysis');
+        const eval =parseInt(evalInput.value);
+        const imp =parseInt(impInput.value);
+        const design =parseInt(designInput.value);
+        const analysis =parseInt(analysisInput.value);
+        number = eval+imp+design+analysis;
+      
+        if (number>= 80){
+             letter= 'A*';
+        }else if (number>=67){
+             letter = 'A';
+        }else if (number >=54){
+             letter = 'B';
+        }else if (number >=41){
+             letter = 'C';
+        }else if (number >= 31){
+             letter = 'D';
+        }else if (number >=22){
+             letter = 'E';
+        }else if (number >=13){
+             letter = 'F';
+        }else if (number >=4){
+             letter ='G';
+            alert(letter);
+        }else{
+             letter ='U';
+            
+        }
+        alert(letter);
+        scoreDiv.innerHTML=letter,number;
+    }
+    </script>
+
+
+</body>
+
+
+
+</html>

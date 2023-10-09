@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Times Table</title>
+    <title>NUMBERS WOOOOOOO!</title>
 </head>
 <body>
     <h1>Number added</h1>
@@ -9,22 +9,21 @@
     <input id="number" >
     <hr style="border: none;">
     <label>Enter another number: </label>
-    <input type="number" id="limit" min="1" max="100">
+    <input type="number" id="num2">
     <hr style="border: none;">
     <button onclick="generateTimesTable()">Add numbers</button>
     <div id="timesTable"></div>
     <script>
         function generateTimesTable() {
             const numberInput = document.getElementById('number');
-            const limitInput = document.getElementById('limit');
+            const limitInput = document.getElementById('num2');
             const timesTableDiv = document.getElementById('timesTable');
             const number = parseInt(numberInput.value);
-            const limit = parseInt(limitInput.value);
-            if (!isNaN(number) && !isNaN(limit)) {
-                let tableHTML = '<h2>Times Table</h2><br>';
-                for (let i = 1; i <= limit; i++) {
-                    tableHTML +=  number + ' + ' + i + ' = ' + (number + i) + '<br>';
-                }
+            const num2 = parseInt(limitInput.value);
+            if (!isNaN(number) && !isNaN(num2)) {
+                let tableHTML = '<h2>NUMBERS!</h2><br>';
+                tableHTML +=  number + ' + ' + num2 + ' = ' + (number + num2) + '<br>';
+                
                 tableHTML += '<br>';
                 timesTableDiv.innerHTML = tableHTML;
             } else {
